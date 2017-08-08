@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType name = "PointsList">
+        <xs:sequence>
+            <xs:element name="point" type="Point" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name = "Point">
+        <xs:sequence>
+            <xs:element name = "x" type = "xs:integer"/>
+            <xs:element name = "y" type = "xs:integer"/>
+        </xs:sequence>
+        <xs:attribute name = "unit" type = "Unit" use = "required"/>
+        <!--use = "required" сдела что бы атрибут был обязателен -->
+    </xs:complexType>
+    <xs:simpleType name = "Unit">
+        <xs:restriction base = "xs:string">
+            <xs:enumeration value = "cm"/>
+            <xs:enumeration value = "mm"/>
+            <xs:enumeration value = "px"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name = "pointsList" type = "PointsList"/>
+</xs:schema>
