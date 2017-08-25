@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!ELEMENT pointsList (point*) >
+        <!ELEMENT point (x,y)>
+        <!ATTLIST point unit ("cm"|"mm"|"px") #REQUIRED>
+        <!ELEMENT x (#PCDATA)>
+        <!ELEMENT y ()#PCDATA>
